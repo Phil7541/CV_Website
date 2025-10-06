@@ -1,5 +1,5 @@
-const ids = ["personal-statement", "education", "work-experience", "skills", "hobbies"];
-const navElements = ["nav-personal-statement", "nav-education", "nav-work-experience", "nav-skills", "nav-hobbies"];
+const ids = ["personal-statement", "skills", "education", "work-experience", "hobbies"];
+const navElements = ["nav-personal-statement", "nav-skills", "nav-education", "nav-work-experience", "nav-hobbies"];
 
 function updateActiveNav() {
   // Remove active from all
