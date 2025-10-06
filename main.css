@@ -355,12 +355,7 @@
     padding: 8px 16px;
     text-decoration: none;
   }
-
-  #navbar li a:hover {
-    background-color: #c9c9c9;
-    border-bottom: #3A7C22 3px solid;
-  }
-
+  
   #navbar li a.active {
     background-color: #b9b9b9;
     border-bottom: #3A7C22 3px solid;
@@ -511,11 +506,6 @@
     text-align: center;
     padding: 8px 16px;
     text-decoration: none;
-  }
-
-  #navbar li a:hover {
-    background-color: #c9c9c9;
-    border-bottom: #3A7C22 3px solid;
   }
 
   #navbar li a.active {
