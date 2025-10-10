@@ -163,6 +163,17 @@ html{
     background-color: #c9c9c9;
   }
 
+  #contact-container a{
+    justify-self: center;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+  }
+
+  #contact-container a:hover{
+    text-decoration: underline;
+  }
+
   #contact-container p{
     font-weight: bold;
     justify-self: center;
@@ -319,6 +330,17 @@ html{
 
   #contact-bar li:hover {
     background-color: #c9c9c9;
+  }
+
+  #contact-container a{
+    justify-self: center;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+  }
+
+  #contact-container a:hover{
+    text-decoration: underline;
   }
 
   #contact-container p{
@@ -479,12 +501,24 @@ html{
     background-color: #c9c9c9;
   }
 
+  #contact-container a{
+    justify-self: center;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+  }
+
+  #contact-container a:hover{
+    text-decoration: underline;
+  }
+
   #contact-container p{
     font-weight: bold;
     justify-self: center;
     font-size: 20px;
   }
 }
+
 
 @media screen and (max-width: 1000px) and (min-width: 700px) and (orientation: portrait) {
   header{
@@ -636,6 +670,17 @@ html{
 
   #contact-bar li:hover {
     background-color: #c9c9c9;
+  }
+
+  #contact-container a{
+    justify-self: center;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+  }
+
+  #contact-container a:hover{
+    text-decoration: underline;
   }
 
   #contact-container p{
