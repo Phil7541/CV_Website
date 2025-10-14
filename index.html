@@ -8,12 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="main.css">
   </head>
-  <main>
+  <body>
     <div id="app">
       <header>   
         <h1 id="title">Phillip Swann</h1>
       </header>
-      <body>
+      <main>
         <div id="navbar-container">
           <ul id="navbar">
             <li><a id="nav-personal-statement" href="#personal-statement">Personal Statement</a></li>
@@ -23,8 +23,8 @@
             <li><a id="nav-hobbies" href="#hobbies">Hobbies</a></li>
           </ul>
         </div>
-        <br id="personal-statement">
-        <div class="content-box" style="margin-top: 20px;">
+        <br>
+        <div class="content-box" style="margin-top: 20px;" id="personal-statement">
           <h2 class="subtitle">Personal Statement</h2>
           <p class="content">An enthusiastic programming student studying software development,
             specifically full-stack web development. Interest in all areas of IT, including programming,
@@ -32,8 +32,8 @@
             including a visit to Malawi in Africa to take part in community work,
             has increased/developed repertoire of transferable skills such as resilience and leadership.</p>
         </div>
-        <hr id="skills">
-        <div class="content-box">
+        <hr>
+        <div class="content-box" id="skills">
           <h2 class="subtitle">Skills</h2>
           <ul class="point">
             <li>IT Skills - Competent in using Python, JavaScript, HTML and CSS, and good knowledge of SQL and the Unity engine.</li>
@@ -42,8 +42,8 @@
             <li>Teamwork - Working as part of the leadership team for the scouts to organise activities.</li>
           </ul>
         </div>
-        <hr id="education">
-        <div class="content-box">
+        <hr>
+        <div class="content-box" id="education">
           <h2 class="subtitle">Education</h2>
           <p class="content"><span class="small-title">T-Level in Digital Production, Design and Development</span><i> - Farnborough College of Technology</i></p>
           <p class="content"><i>Farnborough, Hampshire | Sep 2024 - June 2026 (Expected)</i></p><br>
@@ -70,8 +70,8 @@
             <li>Photography (AQA):  5</li>
           </ul>
         </div>
-        <hr id="work-experience">
-        <div class="content-box">
+        <hr>
+        <div class="content-box" id="work-experience">
           <h2 class="subtitle">Work Experience</h2>
           <p class="content"><span class="small-title">Lifeguard</span><i> - Coral Reef Waterworld</i></p>
           <p class="content"><i>Bracknell, Berkshire | Sep 2024 - Present</i></p><br>
@@ -89,15 +89,15 @@
             <li>Developed communication and leadership through engagement with the community.</li>
           </ul>
         </div>
-        <hr id="hobbies">
-        <div class="content-box">
+        <hr>
+        <div class="content-box" id="hobbies">
           <h2 class="subtitle">Hobbies</h2>
           <ul class="point">
             <li>Volunteering with Scouts UK developing strong teamwork and communication skills.</li>
             <li>Coding small projects and experimenting with Unity and Raspberry Pi.</li>
           </ul>
         </div>
-      </body>
+      </main>
       <footer>
         <h2 id="contact-title">Contact Me</h2>
         <div id="contact-container">
@@ -114,5 +114,5 @@
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="active.js" async defer></script>
-  </main>
+  </body>
 </html>
