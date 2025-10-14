@@ -3,7 +3,7 @@
   padding: 0px;
 }
 
-html:focus-within {
+html {
   scroll-behavior: smooth;
 }
 
