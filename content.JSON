@@ -1,0 +1,46 @@
+{
+    "content": [
+        {
+            "title": "Personal Statement",
+            "type": "paragraph",
+            "content": "Motivated software development student with experience in programming, embedded systems, and full-stack development through both academic study and personal projects. Experienced developing applications using Python, C#, JavaScript, HTML/CSS, and C++, with a particular interest in object-oriented programming, APIs, and hardware-integrated software systems. Currently completing a software development placement at QinetiQ while independently developing Raspberry Pi and ESP32-based projects."
+        },
+        {
+            "title": "Skills",
+            "type": "points",
+            "content": [
+                {
+                    "title": "Technical Skills",
+                    "points": [
+                        "Python, C#, C++, Kotlin, JavaScript, HTML, CSS, SQL",
+                        "Object-Oriented Programming (OOP)",
+                        "Embedded systems development using ESP32 and Arduino",
+                        "REST APIs and JSON data handling",
+                        "Raspberry Pi and Linux environments",
+                        "Git and version control",
+                        "Basic computer vision development",
+                        "Unity Engine",
+                        "Android app development using Kotlin and Jetpack Compose"
+                    ]
+                },
+                {
+                    "title": "Transferable Skills",
+                    "points": [
+                        "Communication",
+                        "Teamwork",
+                        "Problem Solving",
+                        "Time Management",
+                        "Leadership"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Education",
+            "type": "mixed",
+            "content": [
+                
+            ]
+        }
+    ]
+}
