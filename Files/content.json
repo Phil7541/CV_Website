@@ -1,0 +1,142 @@
+{
+    "content": [
+        {
+            "title": "Personal Statement",
+            "type": "paragraph",
+            "content": [
+                "Motivated software development student with experience in programming, embedded systems, and full-stack development through both academic study and personal projects. Experienced developing applications using Python, C#, JavaScript, HTML/CSS, and C++, with a particular interest in object-oriented programming, APIs, and hardware-integrated software systems. Recently completed a software development placement at QinetiQ while independently developing Raspberry Pi and ESP32-based projects."
+            ]
+        },
+        {
+            "title": "Skills",
+            "type": "list",
+            "content": [
+                {
+                    "title": "Technical Skills",
+                    "points": [
+                        "Python, C#, C++, Kotlin, JavaScript, HTML, CSS, SQL",
+                        "Object-Oriented Programming (OOP)",
+                        "Embedded systems development using ESP32 and Arduino",
+                        "REST APIs and JSON data handling",
+                        "Raspberry Pi and Linux environments",
+                        "Git and version control",
+                        "Basic computer vision development",
+                        "Unity Engine",
+                        "Android app development using Kotlin and Jetpack Compose"
+                    ]
+                },
+                {
+                    "title": "Transferable Skills",
+                    "points": [
+                        "Communication",
+                        "Teamwork",
+                        "Problem Solving",
+                        "Time Management",
+                        "Leadership"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Education",
+            "type": "location",
+            "content": [
+                {
+                    "title": "T-Level in Digital Production, Design and Development",
+                    "organization": "Farnborough College of Technology",
+                    "location": "Farnborough, Hampshire",
+                    "startDate": "Sep 2024",
+                    "endDate": "June 2026",
+                    "points": [
+                        "Overall Grade: Distinction",
+                        "Developing practical experience in software development, object-oriented programming, databases, and web technologies.",
+                        "Completed a software development industry placement at QinetiQ.",
+                        "Achieved the Cisco Networking Academy Junior Cybersecurity Analyst Career Path and IT Essentials"
+                    ]
+                },
+                {
+                    "title": "GCSEs",
+                    "organization": "King's Academy Easthampstead Park",
+                    "location": "Bracknell, Berkshire",
+                    "startDate": "Sep 2019",
+                    "endDate": "June 2024",
+                    "points": [
+                        "8 GCSEs including Maths (9), Combined Science (9-8), and Computer Science (7)"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Projects",
+            "type": "list",
+            "content": [
+                {
+                    "title": "ESP32 Environmental Sensor Hub",
+                    "points": [
+                        "Developed an ESP32-based sensor hub in C++ for collecting and serving environmental data through REST-style APIs.", 
+                        "Worked with modular architecture, asynchronous tasks, hardware communication, and Git-based version control."
+                    ]
+                },
+                {
+                    "title": "E-Paper Desktop Display",
+                    "points": [
+                        "Designed and programmed a low-power desktop display using Raspberry Pi and e-paper technology.",
+                        "Developed software to retrieve and display live information from APIs and local services.",
+                        "Worked with hardware integration, UI layout design, and display optimisation."
+                    ]
+                },
+                {
+                    "title": "Computer Vision Maze Robot (ongoing project)",
+                    "points": [
+                        "Developing a self-driving maze robot using a Sphero Mini and Python implementing initial object tracking using OpenCV for real-time robot position detection.",
+                        "Currently developing maze recognition and pathfinding systems, with plans to explore AI-based maze solving and autonomous navigation."
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Work Experience",
+            "type": "location",
+            "content": [
+                {
+                    "title": "Software Development Industry Placement",
+                    "organization": "QinetiQ",
+                    "location":"Farnborough, Hampshire",
+                    "startDate": "May 2026",
+                    "endDate": "July 2026",
+                    "points": [
+                        "Supported software development activities as part of a professional engineering environment.",
+                        "Worked collaboratively with developers and other team members to complete technical tasks and solve problems.",
+                        "Gained experience using industry-standard tools, workflows, and development practices.",
+                        "Adapted quickly to new technologies and independently developed understanding of unfamiliar systems.",
+                        "Demonstrated professionalism, communication, and attention to detail while working in a secure workplace environment."
+                    ]
+                },
+                {
+                    "title": "Lifeguard",
+                    "organization": "Everyone Active",
+                    "location": "Bracknell, Berkshire",
+                    "startDate": "Sep 2024",
+                    "endDate": "Present",
+                    "points": [
+                        "Worked collaboratively as part of a team to respond effectively to emergencies.",
+                        "Maintained high standards of supervision and hygiene on and off poolside to ensure a safe environment.",
+                        "Helped customers through clear communication, providing guidance and support."
+                    ]
+                },
+                {
+                    "title": "Young Leader",
+                    "organization": "Scouts UK",
+                    "location":"Bracknell, Berkshire",
+                    "startDate": "Jan 2023",
+                    "endDate": "Present",
+                    "points": [
+                        "Planned and led engaging activities for groups of 20+ young people.",
+                        "Supported the running of events, including assisting in risk assessing activities.",
+                        "Developed communication and leadership through engagement with the community."
+                    ]
+                }
+            ]
+        }
+    ]
+}
