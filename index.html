@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>CV Website</title>
-    <meta name="description" content="My CV Website">
+    <title>Phillip Swann | Software Developer</title>
+    <meta name="description" content="CV and portfolio of Phillip Swann, a software development student specialising in software, embedded systems and web development.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="main.css">
     <link rel="icon" href="Files/favicon.png">
@@ -14,98 +14,43 @@
       <header>   
         <h1>Phillip Swann</h1>
       </header>
-      <nav>
+      <nav aria-label="CV sections">
         <ul id="navbar">
-          <li><a id="nav-personal-statement" href="#personal-statement">Personal Statement</a></li>
-          <li><a id="nav-skills" href="#skills">Skills</a></li>
-          <li><a id="nav-education" href="#education">Education</a></li>
-          <li><a id="nav-work-experience" href="#work-experience">Work Experience</a></li>
-          <li><a id="nav-hobbies" href="#hobbies">Hobbies</a></li>
+          <li v-for="section in content" :key="section.title"><a :id="navIdFormatted(section.title)" :href="navHrefFormatted(section.title)">{{ section.title }}</a></li>
         </ul>
       </nav>
       <main>
-        <section style="margin-top: 20px;" id="personal-statement"> <!-- TODO: Remove Inline Stying -->
-          <h2>Personal Statement</h2>
-          <p class="content">An enthusiastic programming student studying software development,
-            specifically full-stack web development. Interest in all areas of IT, including programming,
-            networking, and cybersecurity. Regularly volunteering with Scouts UK,
-            including a visit to Malawi in Africa to take part in community work,
-            has increased/developed repertoire of transferable skills such as resilience and leadership.</p>
-        </section>
-        <hr>
-        <section id="skills">
-          <h2>Skills</h2>
-          <ul class="point">
-            <li>IT Skills - Competent in using Python, JavaScript, HTML and CSS, and good knowledge of SQL and the Unity engine.</li>
-            <li>Time Management - Planning events and activities for the scouts ensuring that meeting timings aren't exceeded.</li>
-            <li>Communication - Clear communication to effectively respond to incidents while lifeguarding.</li>
-            <li>Teamwork - Working as part of the leadership team for the scouts to organise activities.</li>
-          </ul>
-        </section>
-        <hr>
-        <section id="education">
-          <h2>Education</h2>
-          <p class="content"><span class="small-title">T-Level in Digital Production, Design and Development</span><i> - Farnborough College of Technology</i></p>
-          <p class="content"><i>Farnborough, Hampshire | Sep 2024 - June 2026 (Expected)</i></p><br>
-          <ul class="point">
-            <li>Expected Completion: June 2026</li>
-            <li class="subpoint">Core Exams Grade:  C</li>
-          </ul>
-          <ul class="point">
-            <li>Cisco Networking Academy</li>
-            <li class="subpoint">Junior Cybersecurity Analyst Career Path - Passed</li>
-            <li class="subpoint">IT Essentials 8 - Passed</li>
-          </ul>
-          <br><br>
-          <p class="content"><span class="small-title">GCSEs</span><i> - King's Academy Easthampstead Park</i></p>
-          <p class="content"><i>Bracknell, Berkshire | Sep 2019 - June 2024</i></p><br>
-          <ul class="point">
-            <li>Maths (EDEXL):  9</li>
-            <li>English Language (AQA):  5</li>
-            <li>English Literature (AQA):  6</li>
-            <li>Combined Science (AQA):  9-8</li>
-            <li>Computer Science (OCR):  7</li>
-            <li>History (EDEXL):  7</li>
-            <li>Physical Education (OCR):  6</li>
-            <li>Photography (AQA):  5</li>
-          </ul>
-        </section>
-        <hr>
-        <section id="work-experience">
-          <h2>Work Experience</h2>
-          <p class="content"><span class="small-title">Lifeguard</span><i> - Coral Reef Waterworld</i></p>
-          <p class="content"><i>Bracknell, Berkshire | Sep 2024 - Present</i></p><br>
-          <ul class="point">
-            <li>Worked collaboratively as part of a team to respond effectively to emergencies.</li>
-            <li>Maintained high standards of supervision and hygiene on and off poolside to ensure a safe environment.</li>
-            <li>Helped customers through clear communication, providing guidance and support.</li>
-          </ul>
-          <br><br>
-          <p class="content"><span class="small-title">Young Leader</span><i> - Scouts UK</i></p>
-          <p class="content"><i>Bracknell, Berkshire | Jan 2023 - Present</i></p><br>
-          <ul class="point">
-            <li>Planned and led engaging activities for groups of 20+ young people.</li>
-            <li>Supported the running of events, including assisting in risk assessing activities.</li>
-            <li>Developed communication and leadership through engagement with the community.</li>
-          </ul>
-        </section>
-        <hr>
-        <section id="hobbies">
-          <h2>Hobbies</h2>
-          <ul class="point">
-            <li>Volunteering with Scouts UK developing strong teamwork and communication skills.</li>
-            <li>Coding small projects and experimenting with Unity and Raspberry Pi.</li>
-          </ul>
+        <section v-for="section in content" :id="idFormatted(section.title)" :key="section.title">
+          <h2>{{ section.title }}</h2>
+          <div v-if="section.type === 'paragraph'" class="paragraph">
+            <p v-for="paragraph in section.content" :key="paragraph">{{ paragraph }}</p>
+          </div>
+          <div v-else-if="section.type === 'list'" class="list">
+            <div v-for="list in section.content" :key="list.title">
+              <h3>{{ list.title }}</h3>
+              <ul>
+                <li v-for="item in list.points" :key="item">{{ item }}</li>
+              </ul>
+            </div>
+          </div>
+          <div v-else-if="section.type === 'location'" class="location">
+            <div v-for="place in section.content" :key="place.title">
+              <h3>{{ place.title }} <span>- {{ place.organization }}</span></h3>
+              <p>{{ place.location }} | {{ place.startDate }} - {{ place.endDate }}</p>
+              <ul>
+                <li v-for="item in place.points" :key="item">{{ item }}</li>
+              </ul>
+            </div>
+          </div>
         </section>
       </main>
       <footer>
         <h2>Contact Me</h2>
         <div>
           <ul>
-            <li>Phone: 07367 066935</li>
             <li>Email: <a href="mailto:phillipswann40@gmail.com">phillipswann40@gmail.com</a></li>
-            <li>LinkedIn: <a href="https://www.linkedin.com/in/phillip-swann-1b5216351/" target="_blank">Phillip Swann</a></li>
-            <li>GitHub: <a href="https://github.com/phil20267541" target="_blank">phil20267541</a></li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/phillip-swann-1b5216351/" target="_blank" rel="noopener noreferrer">Phillip Swann</a></li>
+            <li>GitHub: <a href="https://github.com/Phil7541" target="_blank" rel="noopener noreferrer">Phil7541</a></li>
           </ul>
           <p><a href="Files/Phillip Swann CV.pdf" download target="_blank">Download My CV Here</a></p>
           <p>References available upon request</p>
@@ -113,6 +58,6 @@
       </footer>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="active.js" async defer></script>
+    <script src="main.js"></script>
   </body>
 </html>

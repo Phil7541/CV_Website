@@ -9,13 +9,20 @@
   --section-background: #F5F5F5;
 
   /* Margins */
+  --section-scroll-margin: 20px;
   --section-margin: 0 0 20px;
+  --list-margin: 0 0 10px;
+  --list-title-margin: 0 0 5px;
+  --list-item-margin: 0 0 2px 20px;
+  --location-title-margin: 0 0 5px;
   --first-section-margin: 20px 0;
-  --footer-margin: 20px 0 10px;
+  --footer-margin: 0 0 10px;
 
   /* Paddings */
+  --header-padding: 0 0 10px;
   --nav-button-padding: 8px 16px;
   --section-padding: 20px;
+  --footer-padding: 10px;
   --footer-list-item-padding: 14px 16px;
 
   /* Widths */
@@ -28,8 +35,12 @@
 
   /* Font Sizes */
   --header-font-size: 50px;
-  --navbar-font-size: 24px;
+  --navbar-font-size: 20px;
   --section-header-font-size: 30px;
+  --paragraph-font-size: 16px;
+  --list-title-font-size: 20px;
+  --location-title-font-size: 20px;
+  --location-subtitle-font-size: 18px;
   --footer-header-font-size: 30px;
   --footer-list-font-size: 16px;
   --footer-content-font-size: 20px;
@@ -46,6 +57,7 @@ html, body {
 
 header {
   background-color: var(--secondary-color);
+  padding: var(--header-padding);
   h1 {
     font-size: var(--header-font-size);
     justify-self: center;
@@ -59,8 +71,6 @@ nav {
   ul {
     justify-self: center;
     list-style-type: none;
-    margin: 0;
-    padding: 0;
     overflow: hidden;
     display: block;
     width: 100%;
@@ -68,6 +78,9 @@ nav {
       font-size: var(--navbar-font-size);
       border-bottom: var(--hr-color) 2px solid;
       width: 100%;
+      &:first-child {
+        border-top: var(--hr-color) 2px solid;
+      }
       &:last-child {
         border: none;
       }
@@ -78,6 +91,10 @@ nav {
         padding: var(--nav-button-padding);
         text-decoration: none;
         &.active {
+          background-color: var(--secondary-color);
+          border-bottom: var(--primary-color) 3px solid;
+        }
+        &:active {
           background-color: var(--active-background);
           border-bottom: var(--primary-color) 3px solid;
         }
@@ -96,6 +113,7 @@ main {
     margin: var(--section-margin);
     padding: var(--section-padding);
     background-color: var(--section-background);
+    scroll-margin-top: var(--section-scroll-margin);
     &:first-child {
       margin: var(--first-section-margin);
     }
@@ -106,6 +124,52 @@ main {
       text-decoration: underline;
       margin: var(--section-margin);
     }
+    .paragraph {
+      p {
+        font-size: var(--paragraph-font-size);
+        color: var(--text-color);
+      }
+    }
+    .list {
+      h3 {
+        font-size: var(--list-title-font-size);
+        color: var(--text-color);
+        margin: var(--list-title-margin);
+      }
+      ul {
+        margin: var(--list-margin);
+        li {
+          font-size: var(--paragraph-font-size);
+          color: var(--text-color);
+          margin: var(--list-item-margin);
+        }
+      }
+    }
+    .location {
+      h3 {
+        font-size: var(--location-title-font-size);
+        color: var(--text-color);
+        margin: var(--location-title-margin);
+        span {
+          font-weight: 500;
+          font-style: italic;
+        }
+      }
+      p {
+        font-size: var(--location-subtitle-font-size);
+        font-weight: 500;
+        color: var(--text-color);
+        margin: var(--location-title-margin);
+      }
+      ul {
+        margin: var(--list-margin);
+        li {
+          font-size: var(--paragraph-font-size);
+          color: var(--text-color);
+          margin: var(--list-item-margin);
+        }
+      }
+    }
   }
   hr {
     margin: var(--section-margin);
@@ -115,45 +179,9 @@ main {
   }
 }
 
-/* TODO: Content Boxes designed for dynamic allocation */
-
-.content {
-  width: 90%;
-  justify-self: center;
-  font-size: 16px;
-}
-
-.small-title {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.point {
-  font-size: 16px;
-  margin-left: 50px;
-  list-style-type: square;
-  width: 90%;
-  justify-self: center;
-}
-
-.subpoint {
-  font-size: 12px;
-  margin-left: 20px;
-  list-style-type: circle;
-}
-
-.skills-box {
-  display: block;
-  width: 80%;
-  list-style-type: square;
-}
-
-.skills-box:first-of-type {
-  margin-bottom: 40px;
-}
-
 footer {
   background-color: var(--secondary-color);
+  padding: var(--footer-padding);
   h2 {
     font-size: var(--footer-header-font-size);
     justify-self: center;
@@ -162,11 +190,10 @@ footer {
     margin: var(--footer-margin);
   }
   div {
+    color: var(--text-color);
     ul {
       justify-self: center;
       list-style-type: none;
-      margin: 0;
-      padding: 0;
       overflow: hidden;
       display: block;
       width: var(--footer-list-width);
@@ -178,11 +205,11 @@ footer {
         &:last-child {
           border: none;
         }
-        &:active {
-          background-color: var(--active-background);
-        }
         a {
           font-size: var(--footer-list-font-size);
+          &:active {
+            text-decoration: underline;
+          }
         }
       }
     }
@@ -190,7 +217,7 @@ footer {
       justify-self: center;
       font-size: var(--footer-content-font-size);
       text-decoration: none;
-      color: black;
+      color: var(--text-color);
       &:active {
         text-decoration: underline;
       }
@@ -203,518 +230,224 @@ footer {
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  header{
-    background-color: #D9D9D9;
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  :root {
+    /* Margins */
+    --section-scroll-margin: 230px;
+    --section-margin: 0 0 20px;
+    --list-margin: 0 0 10px;
+    --list-title-margin: 0 0 5px;
+    --list-item-margin: 0 0 2px 20px;
+    --location-title-margin: 0 0 5px;
+    --first-section-margin: 20px 0;
+    --footer-margin: 0 0 10px;
+
+    /* Paddings */
+    --header-padding: 0 0 10px;
+    --nav-button-padding: 8px 16px;
+    --section-padding: 20px;
+    --footer-padding: 10px;
+    --footer-list-item-padding: 14px 16px;
+
+    /* Widths */
+    --section-width: 80%;
+    --footer-list-width: 50%;
+    --footer-list-item-width: 80%;
+
+    /* Border Radii */
+    --section-border-radius: 20px;
+
+    /* Font Sizes */
+    --header-font-size: 50px;
+    --navbar-font-size: 20px;
+    --section-header-font-size: 36px;
+    --paragraph-font-size: 18px;
+    --list-title-font-size: 24px;
+    --location-title-font-size: 24px;
+    --location-subtitle-font-size: 20px;
+    --footer-header-font-size: 36px;
+    --footer-list-font-size: 20px;
+    --footer-content-font-size: 24px;
   }
 
-  #title{
-    font-size: 50px;
-    justify-self: center;
-    color: #3A7C22;
-    text-decoration: underline;
-  }
-
-  #navbar-container {
+  nav {
     position: sticky;
     top: 0;
-    z-index: 1000;
-    background-color: #D9D9D9;
-  }
-
-  #navbar{
-    justify-self: center;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    display: flex;
-  }
-
-  #navbar li{
-    font-size: 18px;
-    border-right: #c9c9c9 2px solid;
-  }
-
-  #navbar li:last-child{
-    border: none;
-  }
-
-  #navbar li a{
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 8px 16px;
-    text-decoration: none;
-  }
-  
-  #navbar li a.active {
-    background-color: #b9b9b9;
-    border-bottom: #3A7C22 3px solid;
-  }
-
-
-  .content-box{
-    width: 70%;
-    border: black 1px solid;
-    border-radius: 20px;
-    justify-self: center;
-    margin-bottom: 20px;
-    padding: 20px;
-    background-color: #f5f5f5;
-  }
-
-  hr{
-    margin-bottom: 20px;
-    width: 70%;
-    color: #d9d9d9;
-    justify-self: center;
-  }
-
-  .subtitle{
-    font-size: 40px;
-    justify-self: center;
-    color: #3A7C22;
-    text-decoration: underline;
-    margin-bottom: 20px;
-  }
-
-  .content{
-    width: 90%;
-    justify-self: center;
-  }
-
-  .small-title{
-    font-size: 25px;
-    font-weight: bold;
-  }
-
-  .point{
-    margin-left: 50px;
-    list-style-type: square;
-    width: 90%;
-    justify-self: center;
-  }
-
-  .subpoint{
-    font-size: 15px;
-    margin-left: 20px;
-    list-style-type: circle;
-  }
-
-  .skills-box{
-    display: inline-block;
-    width: 49%;
-    list-style-type: square;
-  }
-
-  .skills-box:first-of-type{
-    border-right: black 1px solid;
-  }
-
-  footer{
-    background-color: #D9D9D9;
-    padding: 20px;
-  }
-
-  #contact-title{
-    font-size: 40px;
-    justify-self: center;
-    color: #3A7C22;
-    text-decoration: underline;
-    margin: 20px 0px 10px 0px;
-  }
-
-  #contact-container {
-    background-color: #D9D9D9;
-  }
-
-  #contact-bar{
-    justify-self: center;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: block;
-    overflow: hidden;
-    width: 50%;
-  }
-
-  #contact-bar li{
-    font-size: 20px;
-    border-bottom: #c9c9c9 2px solid;
-    width: 80%;
-    padding: 14px 16px;
-  }
-
-  #contact-bar li:last-child{
-    border: none;
-  }
-
-  #contact-bar li:hover {
-    background-color: #c9c9c9;
-  }
-
-  #contact-container a{
-    justify-self: center;
-    font-size: 20px;
-    text-decoration: none;
-    color: black;
-  }
-
-  #contact-container a:hover{
-    text-decoration: underline;
-  }
-
-  #contact-container p{
-    font-weight: bold;
-    justify-self: center;
-    font-size: 20px;
   }
 }
 
+@media only screen and (min-width: 1024px) and (max-width: 1699px) {
+  :root {
+    /* Margins */
+    --section-scroll-margin: 60px;
+    --section-margin: 0 0 20px;
+    --list-margin: 0 0 10px;
+    --list-title-margin: 0 0 5px;
+    --list-item-margin: 0 0 2px 20px;
+    --location-title-margin: 0 0 5px;
+    --first-section-margin: 20px 0;
+    --footer-margin: 0 0 10px;
 
-@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-  header{
-    background-color: #D9D9D9;
+    /* Paddings */
+    --header-padding: 0 0 10px;
+    --nav-button-padding: 8px 16px;
+    --section-padding: 20px;
+    --footer-padding: 20px;
+    --footer-list-item-padding: 14px 16px;
+
+    /* Widths */
+    --section-width: 80%;
+    --footer-list-width: 40%;
+    --footer-list-item-width: 80%;
+
+    /* Border Radii */
+    --section-border-radius: 20px;
+
+    /* Font Sizes */
+    --header-font-size: 50px;
+    --navbar-font-size: 20px;
+    --section-header-font-size: 36px;
+    --paragraph-font-size: 18px;
+    --list-title-font-size: 24px;
+    --location-title-font-size: 24px;
+    --location-subtitle-font-size: 20px;
+    --footer-header-font-size: 36px;
+    --footer-list-font-size: 20px;
+    --footer-content-font-size: 24px;
   }
 
-  #title{
-    font-size: 50px;
-    justify-self: center;
-    color: #3A7C22;
-    text-decoration: underline;
-  }
-
-  #navbar-container {
+  nav {
     position: sticky;
     top: 0;
-    z-index: 1000;
-    background-color: #D9D9D9;
+    ul {
+      display: flex;
+      li {
+        border-bottom: none;
+        border-right: var(--hr-color) 2px solid;
+        &:first-child {
+          border-top: none;
+        }
+        a {
+          &.active {
+            background-color: var(--secondary-color);
+            border-bottom: var(--primary-color) 3px solid;
+          }
+        }
+      }
+    }
   }
 
-  #navbar{
-    justify-self: center;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    display: flex;
-  }
-
-  #navbar li{
-    font-size: 18px;
-    border-right: #c9c9c9 2px solid;
-  }
-
-  #navbar li:last-child{
-    border: none;
-  }
-
-  #navbar li a{
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 8px 16px;
-    text-decoration: none;
-  }
-
-  #navbar li a.active {
-    background-color: #b9b9b9;
-    border-bottom: #3A7C22 3px solid;
-  }
-
-  .content-box{
-    width: 80%;
-    border: black 1px solid;
-    border-radius: 20px;
-    justify-self: center;
-    margin-bottom: 20px;
-    padding: 20px;
-    background-color: #f5f5f5;
-  }
-
-  hr{
-    margin-bottom: 20px;
-    width: 80%;
-    color: #d9d9d9;
-    justify-self: center;
-  }
-
-  .subtitle{
-    font-size: 30px;
-    justify-self: center;
-    color: #3A7C22;
-    text-decoration: underline;
-    margin-bottom: 20px;
-  }
-
-  .content{
-    width: 90%;
-    justify-self: center;
-    font-size: 16px;
-  }
-
-  .small-title{
-    font-size: 20px;
-    font-weight: bold;
-  }
-
-  .point{
-    font-size: 16px;
-    margin-left: 50px;
-    list-style-type: square;
-    width: 90%;
-    justify-self: center;
-  }
-
-  .subpoint{
-    font-size: 12px;
-    margin-left: 20px;
-    list-style-type: circle;
-  }
-
-  .skills-box{
-    display: block;
-    width: 45%;
-    list-style-type: square;
-    display: inline-block;
-  }
-
-  .skills-box:first-of-type{
-    margin-bottom: 40px;
-  }
-
-  footer{
-    background-color: #D9D9D9;
-  }
-
-  #contact-title{
-    font-size: 30px;
-    justify-self: center;
-    color: #3A7C22;
-    text-decoration: underline;
-    margin: 20px 0px 10px 0px;
-  }
-
-  #contact-container {
-    background-color: #D9D9D9;
-  }
-
-  #contact-bar{
-    justify-self: center;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    display: block;
-    width: 50%;
-  }
-
-  #contact-bar li{
-    font-size: 16px;
-    border-bottom: #c9c9c9 2px solid;
-    width: 80%;
-    padding: 14px 16px;
-  }
-
-  #contact-bar li:last-child{
-    border: none;
-  }
-
-  #contact-bar li:hover {
-    background-color: #c9c9c9;
-  }
-
-  #contact-container a{
-    justify-self: center;
-    font-size: 20px;
-    text-decoration: none;
-    color: black;
-  }
-
-  #contact-container a:hover{
-    text-decoration: underline;
-  }
-
-  #contact-container p{
-    font-weight: bold;
-    justify-self: center;
-    font-size: 20px;
+  footer {
+    div {
+      ul {
+        li {
+          a {
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+      a {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
   }
 }
 
-@media only screen and (min-width: 1024px) and (orientation: landscape) {
-  header{
-    background-color: #D9D9D9;
+@media only screen and (min-width: 1700px) {
+  :root {
+    /* Margins */
+    --section-scroll-margin: 60px;
+    --section-margin: 0 0 20px;
+    --list-margin: 0 0 10px;
+    --list-title-margin: 0 0 5px;
+    --list-item-margin: 0 0 2px 20px;
+    --location-title-margin: 0 0 5px;
+    --first-section-margin: 20px 0;
+    --footer-margin: 0 0 10px;
+    --footer-list-margin: 0 0 10px;
+
+    /* Paddings */
+    --header-padding: 0 0 10px;
+    --nav-button-padding: 8px 16px;
+    --section-padding: 20px;
+    --footer-padding: 20px;
+    --footer-list-item-padding: 14px 16px;
+
+    /* Widths */
+    --section-width: 80%;
+    --footer-list-width: 80%;
+    --footer-list-item-width: 80%;
+
+    /* Border Radii */
+    --section-border-radius: 20px;
+
+    /* Font Sizes */
+    --header-font-size: 50px;
+    --navbar-font-size: 20px;
+    --section-header-font-size: 36px;
+    --paragraph-font-size: 18px;
+    --list-title-font-size: 24px;
+    --location-title-font-size: 24px;
+    --location-subtitle-font-size: 20px;
+    --footer-header-font-size: 36px;
+    --footer-list-font-size: 20px;
+    --footer-content-font-size: 24px;
   }
 
-  #title{
-    font-size: 80px;
-    justify-self: center;
-    color: #3A7C22;
-    text-decoration: underline;
-  }
-
-  #navbar-container {
+  nav {
     position: sticky;
     top: 0;
-    z-index: 1000;
-    background-color: #D9D9D9;
+    ul {
+      display: flex;
+      li {
+        border-bottom: none;
+        border-right: var(--hr-color) 2px solid;
+        &:first-child {
+          border-top: none;
+        }
+        a {
+          &.active {
+            background-color: var(--secondary-color);
+            border-bottom: var(--primary-color) 3px solid;
+          }
+          &:hover {
+            background-color: var(--active-background);
+            border-bottom: var(--primary-color) 3px solid;
+          }
+        }
+      }
+    }
   }
 
-  #navbar{
-    justify-self: center;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    display: flex;
-  }
-
-  #navbar li{
-    font-size: 20px;
-    border-right: #c9c9c9 2px solid;
-  }
-
-  #navbar li:last-child{
-    border: none;
-  }
-
-  #navbar li a{
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-
-  #navbar li a:hover {
-    background-color: #c9c9c9;
-    border-bottom: #3A7C22 3px solid;
-  }
-
-  #navbar li a.active {
-    background-color: #b9b9b9;
-    border-bottom: #3A7C22 3px solid;
-  }
-
-
-  .content-box{
-    width: 50%;
-    border: black 1px solid;
-    border-radius: 20px;
-    justify-self: center;
-    margin-bottom: 20px;
-    padding: 20px;
-    background-color: #f5f5f5;
-    scroll-margin-top: 70px;
-  }
-
-  hr{
-    margin-bottom: 20px;
-    width: 50%;
-    color: #d9d9d9;
-    justify-self: center;
-  }
-
-  .subtitle{
-    font-size: 40px;
-    justify-self: center;
-    color: #3A7C22;
-    text-decoration: underline;
-    margin-bottom: 20px;
-  }
-
-  .content{
-    width: 90%;
-    justify-self: center;
-  }
-
-  .small-title{
-    font-size: 25px;
-    font-weight: bold;
-  }
-
-  .point{
-    margin-left: 50px;
-    list-style-type: square;
-    width: 90%;
-    justify-self: center;
-  }
-
-  .subpoint{
-    font-size: 15px;
-    margin-left: 20px;
-    list-style-type: circle;
-  }
-
-  .skills-box{
-    display: inline-block;
-    width: 49%;
-    list-style-type: square;
-  }
-
-  .skills-box:first-of-type{
-    border-right: black 1px solid;
-  }
-
-  footer{
-    background-color: #D9D9D9;
-    padding: 20px;
-  }
-
-  #contact-title{
-    font-size: 40px;
-    justify-self: center;
-    color: #3A7C22;
-    text-decoration: underline;
-    margin: 20px 0px 10px 0px;
-  }
-
-  #contact-container {
-    background-color: #D9D9D9;
-  }
-
-  #contact-bar{
-    justify-self: center;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    overflow: hidden;
-    width: 50%;
-  }
-
-  #contact-bar li{
-    font-size: 20px;
-    border-right: #c9c9c9 2px solid;
-    width: 80%;
-    padding: 14px 16px;
-  }
-
-  #contact-bar li:last-child{
-    border: none;
-  }
-
-  #contact-bar li:hover {
-    background-color: #c9c9c9;
-  }
-
-  #contact-container a{
-    justify-self: center;
-    font-size: 20px;
-    text-decoration: none;
-    color: black;
-  }
-
-  #contact-container a:hover{
-    text-decoration: underline;
-  }
-
-  #contact-container p{
-    font-weight: bold;
-    justify-self: center;
-    font-size: 20px;
-    margin-top: 20px;
+  footer {
+    div {
+      ul {
+        display: flex;
+        justify-content: center;
+        margin: var(--footer-list-margin);
+        li {
+          border-bottom: var(--secondary-color) 3px solid;
+          border-right: var(--hr-color) 2px solid;
+          width: auto;
+          &:last-child {
+            border: none;
+          }
+          a {
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+      a {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
   }
 }
