@@ -59,23 +59,30 @@ Vue.createApp({
 
   mounted() {
     fetch("content.json")
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(`HTTP error: ${response.status}`);
-        }
+    .then(response => {
+      if (!response.ok) {
+        this.content = [{
+          "title": "ERROR: No Content Found",
+          "type": "error"
+        }];
+        throw new Error(`HTTP error: ${response.status}`);
+      }
 
-        return response.json();
-      })
-      .then(data => {
-        this.content = data.content;
+      return response.json();
+    })
+    .then(data => {
+      this.content = data.content;
 
-        this.$nextTick(() => {
-          this.updateActiveNav();
-        });
-      })
-      .catch(error => {
-        console.error("Error loading content:", error);
+      this.$nextTick(() => {
+        this.updateActiveNav();
       });
+    })
+    .catch(error => {
+      this.content = [{
+          "title": "ERROR: No Content Found",
+          "type": "error"
+        }];
+    });
 
     window.addEventListener("scroll", this.updateActiveNav);
     window.addEventListener("resize", this.updateActiveNav);

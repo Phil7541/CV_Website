@@ -7,6 +7,7 @@
   --active-background: #B9B9B9;
   --hover-colour: #C9C9C9;
   --section-background: #F5F5F5;
+  --error-colour: #c90000;
 
   /* Margins */
   --section-scroll-margin: 20px;
@@ -104,78 +105,87 @@ nav {
 }
 
 main {
-  section {
+  > div {
     width: var(--section-width);
-    max-width: 1200px;
-    border: black 1px solid;
-    border-radius: var(--section-border-radius);
     justify-self: center;
-    margin: var(--section-margin);
-    padding: var(--section-padding);
-    background-color: var(--section-background);
-    scroll-margin-top: var(--section-scroll-margin);
-    &:first-child {
-      margin: var(--first-section-margin);
+    .error {
+      h2 {
+        color: var(--error-colour);
+      }
     }
-    h2 {
-      font-size: var(--section-header-font-size);
+    section {
+      width: var(--section-width);
+      max-width: 1200px;
+      border: black 1px solid;
+      border-radius: var(--section-border-radius);
       justify-self: center;
-      color: var(--primary-color);
-      text-decoration: underline;
       margin: var(--section-margin);
-    }
-    .paragraph {
-      p {
-        font-size: var(--paragraph-font-size);
-        color: var(--text-color);
+      padding: var(--section-padding);
+      background-color: var(--section-background);
+      scroll-margin-top: var(--section-scroll-margin);
+      &:first-child {
+        margin: var(--first-section-margin);
       }
-    }
-    .list {
-      h3 {
-        font-size: var(--list-title-font-size);
-        color: var(--text-color);
-        margin: var(--list-title-margin);
+      h2 {
+        font-size: var(--section-header-font-size);
+        justify-self: center;
+        color: var(--primary-color);
+        text-decoration: underline;
+        margin: var(--section-margin);
       }
-      ul {
-        margin: var(--list-margin);
-        li {
+      .paragraph {
+        p {
           font-size: var(--paragraph-font-size);
           color: var(--text-color);
-          margin: var(--list-item-margin);
         }
       }
-    }
-    .location {
-      h3 {
-        font-size: var(--location-title-font-size);
-        color: var(--text-color);
-        margin: var(--location-title-margin);
-        span {
+      .list {
+        h3 {
+          font-size: var(--list-title-font-size);
+          color: var(--text-color);
+          margin: var(--list-title-margin);
+        }
+        ul {
+          margin: var(--list-margin);
+          li {
+            font-size: var(--paragraph-font-size);
+            color: var(--text-color);
+            margin: var(--list-item-margin);
+          }
+        }
+      }
+      .location {
+        h3 {
+          font-size: var(--location-title-font-size);
+          color: var(--text-color);
+          margin: var(--location-title-margin);
+          span {
+            font-weight: 500;
+            font-style: italic;
+          }
+        }
+        p {
+          font-size: var(--location-subtitle-font-size);
           font-weight: 500;
-          font-style: italic;
-        }
-      }
-      p {
-        font-size: var(--location-subtitle-font-size);
-        font-weight: 500;
-        color: var(--text-color);
-        margin: var(--location-title-margin);
-      }
-      ul {
-        margin: var(--list-margin);
-        li {
-          font-size: var(--paragraph-font-size);
           color: var(--text-color);
-          margin: var(--list-item-margin);
+          margin: var(--location-title-margin);
+        }
+        ul {
+          margin: var(--list-margin);
+          li {
+            font-size: var(--paragraph-font-size);
+            color: var(--text-color);
+            margin: var(--list-item-margin);
+          }
         }
       }
     }
-  }
-  hr {
-    margin: var(--section-margin);
-    width: var(--section-width);
-    color: var(--secondary-color);
-    justify-self: center;
+    hr {
+      margin: var(--section-margin);
+      width: var(--section-width);
+      color: var(--secondary-color);
+      justify-self: center;
+    }
   }
 }
 
@@ -226,6 +236,14 @@ footer {
       font-weight: bold;
       justify-self: center;
       font-size: var(--footer-content-font-size);
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) and (orientation: landscape) {
+  nav {
+    ul {
+      display: flex;
     }
   }
 }

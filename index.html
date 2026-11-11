@@ -15,34 +15,41 @@
         <h1>Phillip Swann</h1>
       </header>
       <nav aria-label="CV sections">
-        <ul id="navbar">
+        <ul v-if="content.length > 0 && content[0].type !== 'error'" id="navbar">
           <li v-for="section in content" :key="section.title"><a :id="navIdFormatted(section.title)" :href="navHrefFormatted(section.title)">{{ section.title }}</a></li>
         </ul>
       </nav>
       <main>
-        <section v-for="section in content" :id="idFormatted(section.title)" :key="section.title">
-          <h2>{{ section.title }}</h2>
-          <div v-if="section.type === 'paragraph'" class="paragraph">
-            <p v-for="paragraph in section.content" :key="paragraph">{{ paragraph }}</p>
-          </div>
-          <div v-else-if="section.type === 'list'" class="list">
-            <div v-for="list in section.content" :key="list.title">
-              <h3>{{ list.title }}</h3>
-              <ul>
-                <li v-for="item in list.points" :key="item">{{ item }}</li>
-              </ul>
+        <div v-if="content.length > 0 && content[0].type !== 'error'">
+          <section v-for="section in content" :id="idFormatted(section.title)" :key="section.title">
+            <h2>{{ section.title }}</h2>
+            <div v-if="section.type === 'paragraph'" class="paragraph">
+              <p v-for="paragraph in section.content" :key="paragraph">{{ paragraph }}</p>
             </div>
-          </div>
-          <div v-else-if="section.type === 'location'" class="location">
-            <div v-for="place in section.content" :key="place.title">
-              <h3>{{ place.title }} <span>- {{ place.organization }}</span></h3>
-              <p>{{ place.location }} | {{ place.startDate }} - {{ place.endDate }}</p>
-              <ul>
-                <li v-for="item in place.points" :key="item">{{ item }}</li>
-              </ul>
+            <div v-else-if="section.type === 'list'" class="list">
+              <div v-for="list in section.content" :key="list.title">
+                <h3>{{ list.title }}</h3>
+                <ul>
+                  <li v-for="item in list.points" :key="item">{{ item }}</li>
+                </ul>
+              </div>
             </div>
-          </div>
-        </section>
+            <div v-else-if="section.type === 'location'" class="location">
+              <div v-for="place in section.content" :key="place.title">
+                <h3>{{ place.title }} <span>- {{ place.organization }}</span></h3>
+                <p>{{ place.location }} | {{ place.startDate }} - {{ place.endDate }}</p>
+                <ul>
+                  <li v-for="item in place.points" :key="item">{{ item }}</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="error">
+          <section class="error" v-for="section in content" :id="idFormatted(section.title)" :key="section.title">
+            <h2>{{ section.title }}</h2>
+          </section>
+        </div>
       </main>
       <footer>
         <h2>Contact Me</h2>
