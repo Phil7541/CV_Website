@@ -327,6 +327,8 @@ footer {
   }
 
   nav {
+    position: sticky;
+    top: 0;
     ul {
       display: flex;
       align-items: stretch;
