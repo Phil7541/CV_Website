@@ -241,6 +241,45 @@ footer {
 }
 
 @media screen and (max-width: 1023px) and (orientation: landscape) {
+  :root {
+    /* Margins */
+    --section-scroll-margin: 20px;
+    --section-margin: 0 0 20px;
+    --list-margin: 0 0 10px;
+    --list-title-margin: 0 0 5px;
+    --list-item-margin: 0 0 2px 20px;
+    --location-title-margin: 0 0 5px;
+    --first-section-margin: 20px 0;
+    --footer-margin: 0 0 10px;
+
+    /* Paddings */
+    --header-padding: 0 0 10px;
+    --nav-button-padding: 8px 16px;
+    --section-padding: 20px;
+    --footer-padding: 10px;
+    --footer-list-item-padding: 14px 16px;
+
+    /* Widths */
+    --section-width: 80%;
+    --footer-list-width: 80%;
+    --footer-list-item-width: 80%;
+
+    /* Border Radii */
+    --section-border-radius: 20px;
+
+    /* Font Sizes */
+    --header-font-size: 50px;
+    --navbar-font-size: 20px;
+    --section-header-font-size: 30px;
+    --paragraph-font-size: 16px;
+    --list-title-font-size: 20px;
+    --location-title-font-size: 20px;
+    --location-subtitle-font-size: 18px;
+    --footer-header-font-size: 30px;
+    --footer-list-font-size: 16px;
+    --footer-content-font-size: 20px;
+  }
+
   nav {
     ul {
       display: flex;
@@ -250,6 +289,7 @@ footer {
         flex: 1;
         border-bottom: none;
         border-right: var(--hr-color) 2px solid;
+        display: flex;
         &:first-child {
           border-top: none;
         }
@@ -257,6 +297,7 @@ footer {
           border-right: none;
         }
         a {
+          flex: 1;
           &.active {
             background-color: var(--secondary-color);
             border-bottom: var(--primary-color) 3px solid;
