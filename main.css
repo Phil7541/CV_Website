@@ -240,6 +240,52 @@ footer {
   }
 }
 
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  :root {
+    /* Margins */
+    --section-scroll-margin: 230px;
+    --section-margin: 0 0 20px;
+    --list-margin: 0 0 10px;
+    --list-title-margin: 0 0 5px;
+    --list-item-margin: 0 0 2px 20px;
+    --location-title-margin: 0 0 5px;
+    --first-section-margin: 20px 0;
+    --footer-margin: 0 0 10px;
+
+    /* Paddings */
+    --header-padding: 0 0 10px;
+    --nav-button-padding: 8px 16px;
+    --section-padding: 20px;
+    --footer-padding: 10px;
+    --footer-list-item-padding: 14px 16px;
+
+    /* Widths */
+    --section-width: 80%;
+    --footer-list-width: 50%;
+    --footer-list-item-width: 80%;
+
+    /* Border Radii */
+    --section-border-radius: 20px;
+
+    /* Font Sizes */
+    --header-font-size: 50px;
+    --navbar-font-size: 20px;
+    --section-header-font-size: 36px;
+    --paragraph-font-size: 18px;
+    --list-title-font-size: 24px;
+    --location-title-font-size: 24px;
+    --location-subtitle-font-size: 20px;
+    --footer-header-font-size: 36px;
+    --footer-list-font-size: 20px;
+    --footer-content-font-size: 24px;
+  }
+
+  nav {
+    position: sticky;
+    top: 0;
+  }
+}
+
 @media screen and (max-width: 1023px) and (orientation: landscape) {
   :root {
     /* Margins */
@@ -305,52 +351,6 @@ footer {
         }
       }
     }
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  :root {
-    /* Margins */
-    --section-scroll-margin: 230px;
-    --section-margin: 0 0 20px;
-    --list-margin: 0 0 10px;
-    --list-title-margin: 0 0 5px;
-    --list-item-margin: 0 0 2px 20px;
-    --location-title-margin: 0 0 5px;
-    --first-section-margin: 20px 0;
-    --footer-margin: 0 0 10px;
-
-    /* Paddings */
-    --header-padding: 0 0 10px;
-    --nav-button-padding: 8px 16px;
-    --section-padding: 20px;
-    --footer-padding: 10px;
-    --footer-list-item-padding: 14px 16px;
-
-    /* Widths */
-    --section-width: 80%;
-    --footer-list-width: 50%;
-    --footer-list-item-width: 80%;
-
-    /* Border Radii */
-    --section-border-radius: 20px;
-
-    /* Font Sizes */
-    --header-font-size: 50px;
-    --navbar-font-size: 20px;
-    --section-header-font-size: 36px;
-    --paragraph-font-size: 18px;
-    --list-title-font-size: 24px;
-    --location-title-font-size: 24px;
-    --location-subtitle-font-size: 20px;
-    --footer-header-font-size: 36px;
-    --footer-list-font-size: 20px;
-    --footer-content-font-size: 24px;
-  }
-
-  nav {
-    position: sticky;
-    top: 0;
   }
 }
 

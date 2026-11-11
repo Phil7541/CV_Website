@@ -45,8 +45,8 @@
             </div>
           </section>
         </div>
-        <div class="error">
-          <section class="error" v-for="section in content" :id="idFormatted(section.title)" :key="section.title">
+        <div v-else class="error">
+          <section v-for="section in content" :id="idFormatted(section.title)" :key="section.title">
             <h2>{{ section.title }}</h2>
           </section>
         </div>
