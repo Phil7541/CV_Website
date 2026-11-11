@@ -244,11 +244,17 @@ footer {
   nav {
     ul {
       display: flex;
+      align-items: stretch;
       li {
+        width: auto;
+        flex: 1;
         border-bottom: none;
         border-right: var(--hr-color) 2px solid;
         &:first-child {
           border-top: none;
+        }
+        &:last-child {
+          border-right: none;
         }
         a {
           &.active {
